@@ -1,6 +1,14 @@
 <h2><%= @list.name %></h2>
-<ul>
-<% @list.movies.each do |film| %>
-  <li><%= film.title %></li>
-<% end %>
-</ul>
+<div class="mb-5">
+  <% @list.bookmarks.each do |bkmk| %>
+  <div class="card-product">
+    <img src="https://source.unsplash.com/random?film" />
+    <div class="card-product-infos">
+      <h2><%= bkmk.movie.title %><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, bookmark_path(bkmk), method: :delete, :class => "ml-2" %></h2>
+      <p><%= bkmk.movie.overview %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+<h4>Add bookmark</h4>
+<%= render 'form' %>
