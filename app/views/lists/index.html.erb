@@ -1,6 +1,6 @@
 <h2>All lists:</h2>
 <div class="cards">
 <% @lists.each do |list| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random?films)"><%= link_to list.name, list_path(list) %></div>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key, height: 300, crop: :fill %>')"><%= link_to list.name, list_path(list) %></div>
 <% end %>
 </div>
