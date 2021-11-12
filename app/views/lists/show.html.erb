@@ -2,7 +2,7 @@
 <div class="mb-5">
   <% @list.bookmarks.each do |bkmk| %>
   <div class="card-product">
-    <img src="https://source.unsplash.com/random?film" />
+    <img src="<%= bkmk.movie.poster_url %>" />
     <div class="card-product-infos">
       <h2><%= bkmk.movie.title %><%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, bookmark_path(bkmk), method: :delete, :class => "ml-2" %></h2>
       <p><%= bkmk.movie.overview %></p>
